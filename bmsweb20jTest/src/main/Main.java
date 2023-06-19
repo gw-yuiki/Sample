@@ -2,9 +2,11 @@ package main;
 
 import org.openqa.selenium.*;
 
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import methodTest.InsertTest;
+import methodTest.UpdateTest;
 
 public class Main {
 
@@ -22,12 +24,16 @@ public class Main {
 		Thread.sleep(500);
 		Login(driver);
 
+		// 変更機能をテストするクラスをインスタンス化
+		Thread.sleep(500);
+		UpdateTest updatetest = new UpdateTest(driver);
+		updatetest.Update();
+
 		// 登録機能をテストするクラスをインスタンス化
 		Thread.sleep(500);
 		InsertTest inserttest = new InsertTest(driver);
-
 		inserttest.Insert();
-		driver.quit();
+		//driver.quit();
 	}
 
 	public static void Login(WebDriver driver) {

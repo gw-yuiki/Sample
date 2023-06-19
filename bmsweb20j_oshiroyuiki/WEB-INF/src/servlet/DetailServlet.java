@@ -64,6 +64,8 @@ public class DetailServlet extends HttpServlet {
 				//cmdの値でフォワード先を呼び分ける
 				if (cmd.equals("detail")) {
 					request.getRequestDispatcher("/view/detail.jsp").forward(request, response);
+				}else if(cmd.equals("update")) {
+					request.getRequestDispatcher("/view/update.jsp").forward(request, response);
 				}
 			} else {
 				//エラーが有る場合はerror.jspにフォワードする
