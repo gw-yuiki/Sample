@@ -27,7 +27,7 @@ public class Main {
 		InsertTest inserttest = new InsertTest(driver);
 
 		inserttest.Insert();
-		driver.quit();
+		//driver.quit();
 	}
 
 	public static void Login(WebDriver driver) {

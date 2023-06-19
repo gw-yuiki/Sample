@@ -1,4 +1,15 @@
 <web-app>
+
+	<!-- UpdateServlet -->
+	<servlet>
+		<servlet-name>UpdateMapping</servlet-name>
+		<servlet-class>servlet.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateMapping</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>listMapping</servlet-name>
 		<servlet-class>servlet.ListServlet</servlet-class>

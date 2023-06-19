@@ -217,4 +217,60 @@ public class BookDAO {
 		}
 		return bookList;
 	}
+
+	//変更機能
+	public void update(Book book) {
+
+
+
+		//変数宣言
+		Connection con = null;
+		Statement smt = null;
+
+
+
+		//SQL文
+		String sql = "UPDATE bookinfo SET title='"
+				+ book.getTitle()
+				+ "',price=" + book.getPrice()
+				+ " WHERE isbn='"
+				+ book.getIsbn() + "'";
+
+
+
+		try {
+			//getConnection()メソッドを利用してConnectionオブジェクトを生成
+			con = getConnection();
+
+
+
+			//ConnectionオブジェクトのcreateStatement（）メソッドを利用して
+			//Statementオブジェクトを生成
+			smt = con.createStatement();
+
+
+
+			//SQLをDBへ発行
+			smt.executeUpdate(sql);
+
+
+
+		} catch (Exception e) {
+			throw new IllegalStateException(e);
+		} finally {
+			//リソースの開放
+			if (smt != null) {
+				try {
+					smt.close(); //Statementオブジェクトをクローズ
+				} catch (SQLException ignore) {
+				}
+			}
+			if (con != null) {
+				try {
+					con.close(); //Connectionオブジェクトをクローズ
+				} catch (SQLException ignore) {
+				}
+			}
+		}
+	}
 }
