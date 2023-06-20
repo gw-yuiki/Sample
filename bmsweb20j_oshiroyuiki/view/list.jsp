@@ -50,7 +50,7 @@
 						<div style="text-align:center; width:190px"><%=books.getPrice()%></div>
 						<div style="display: flex;">
 							<div style="text-align:center; width:68px">
-								<a href="<%=request.getContextPath() %>/detail?isbn=<%=books.getIsbn()%>&cmd=update">変更</a>
+								<a href="<%=request.getContextPath() %>/detail?isbn=<%=books.getIsbn()%>&cmd=update">更新</a>
 							</div>
 							<div style="text-align:left; width:68px">
 								<a href="<%=request.getContextPath()%>/delete?isbn=<%=books.getIsbn()%>">削除</a>

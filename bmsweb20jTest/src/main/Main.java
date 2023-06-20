@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import methodTest.InsertTest;
 import methodTest.UpdateTest;
+import methodTest.ListTest;
 
 public class Main {
 
@@ -23,6 +24,11 @@ public class Main {
 		// ログイン
 		Thread.sleep(500);
 		Login(driver);
+
+		// 変更機能をテストするクラスをインスタンス化
+		Thread.sleep(500);
+		ListTest listtest = new ListTest(driver);
+		listtest.List();
 
 		// 変更機能をテストするクラスをインスタンス化
 		Thread.sleep(500);
