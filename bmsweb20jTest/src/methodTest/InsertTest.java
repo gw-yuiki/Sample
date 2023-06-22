@@ -98,7 +98,7 @@ public class InsertTest {
 		ArrayList<Book> book_list = bookdao.selectAll();
 
 		// 既に登録されているISBNを入力
-		String isbn = book_list.get(1).getIsbn();
+		String isbn = book_list.get(0).getIsbn();
 		WebElement inputIsbn = driver.findElement(By.name("isbn"));
 		inputIsbn.sendKeys(isbn);
 

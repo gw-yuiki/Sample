@@ -25,7 +25,12 @@ public class Main {
 		Thread.sleep(500);
 		Login(driver);
 
-		// 変更機能をテストするクラスをインスタンス化
+		// 登録機能をテストするクラスをインスタンス化
+		Thread.sleep(500);
+		InsertTest inserttest = new InsertTest(driver);
+		inserttest.Insert();
+
+		// 一覧機能をテストするクラスをインスタンス化
 		Thread.sleep(500);
 		ListTest listtest = new ListTest(driver);
 		listtest.List();
@@ -35,10 +40,6 @@ public class Main {
 		UpdateTest updatetest = new UpdateTest(driver);
 		updatetest.Update();
 
-		// 登録機能をテストするクラスをインスタンス化
-		Thread.sleep(500);
-		InsertTest inserttest = new InsertTest(driver);
-		inserttest.Insert();
 		//driver.quit();
 	}
 
