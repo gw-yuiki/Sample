@@ -23,8 +23,8 @@ public class UpdateTest {
 		} catch (NoSuchElementException e) {
 			driver.findElement(By.linkText("[一覧に戻る]")).click();
 		} finally {
-			elem_list = (ArrayList<WebElement>)driver.findElements(By.linkText("変更"));
-			elem_list.get(1).click();
+			elem_list = (ArrayList<WebElement>)driver.findElements(By.linkText("更新"));
+			elem_list.get(0).click();
 		}
 	}
 
@@ -106,6 +106,11 @@ public class UpdateTest {
 		// 登録ボタンをクリック
 		//driver.findElement(By.name("isbn")).click();
 		driver.findElement(By.cssSelector("input[value='変更完了']")).submit();
+
+		// 処理終了
+		driver.findElement(By.linkText("[一覧に戻る]")).click();
+		driver.findElement(By.linkText("メニュー")).click();
+		driver.findElement(By.linkText("【ログアウト】")).click();
 	}
 }
 

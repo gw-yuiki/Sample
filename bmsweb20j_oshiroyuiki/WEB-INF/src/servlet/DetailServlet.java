@@ -45,6 +45,8 @@ public class DetailServlet extends HttpServlet {
 			if (book.getIsbn() == null) {
 				if (cmd.equals("detail")) {
 					error = "表示対象の書籍が存在しない為、詳細情報は表示できませんでした。";
+				}else if(cmd.equals("update")) {
+					error = "更新対象の書籍が存在しない為、変更画面は表示できませんでした。";
 				}
 				cmd = "list";
 				return;
