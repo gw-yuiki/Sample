@@ -60,7 +60,6 @@ public class UpdateTest {
 		inputPrice.sendKeys("2000");
 
 		// 登録ボタンをクリック
-		//driver.findElement(By.name("isbn")).click();
 		driver.findElement(By.cssSelector("input[value='変更完了']")).submit();
 
 		// メニューボタンをクリック

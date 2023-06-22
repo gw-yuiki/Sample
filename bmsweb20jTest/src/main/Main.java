@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import methodTest.InsertTest;
 import methodTest.UpdateTest;
 import methodTest.ListTest;
+import methodTest.DetailTest;
 
 public class Main {
 
@@ -25,6 +26,7 @@ public class Main {
 		Thread.sleep(500);
 		Login(driver);
 
+
 		// 登録機能をテストするクラスをインスタンス化
 		Thread.sleep(500);
 		InsertTest inserttest = new InsertTest(driver);
@@ -35,12 +37,17 @@ public class Main {
 		ListTest listtest = new ListTest(driver);
 		listtest.List();
 
+		// 詳細機能をテストするクラスをインスタンス化
+		Thread.sleep(500);
+		DetailTest detailtest = new DetailTest(driver);
+		detailtest.Detail();
+
 		// 変更機能をテストするクラスをインスタンス化
 		Thread.sleep(500);
 		UpdateTest updatetest = new UpdateTest(driver);
 		updatetest.Update();
 
-		//driver.quit();
+		driver.quit();
 	}
 
 	public static void Login(WebDriver driver) {
